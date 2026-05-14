@@ -582,7 +582,7 @@ Margen de seguridad respetado (256 MB límite). La migración a **ext2** elimin�
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 | Categoría | Tecnología |
 |-----------|------------|
@@ -599,6 +599,6 @@ Margen de seguridad respetado (256 MB límite). La migración a **ext2** elimin�
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de carácter académico (TFG). Todos los componentes de software utilizados son de código abierto.
