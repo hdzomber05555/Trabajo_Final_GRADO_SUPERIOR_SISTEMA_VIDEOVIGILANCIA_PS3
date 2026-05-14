@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: nextcloud_db
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Nombre_usuario_maquina
+      - MYSQL_PASSWORD=Contraseña_usuario
+      - MYSQL_DATABASE=Nombre_Base_de_datos
+      - MYSQL_USER=Nombre_usuario
+
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud_app
+    restart: always
+    ports:
+      - "8080:80" # Asignación de puertos
+    depends_on:
+      - db
+    volumes:
+      - /tu_carpeta/tu_carpeta/db_data:/var/lib/mysql
+      - /tu_carpeta/tu_carpeta/app_data:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=Contraseña_usuario
+      - MYSQL_DATABASE=Nombre_Base_de_datos
+      - MYSQL_USER=Nombre_usuario
+      - MYSQL_HOST=db
+
+volumes:
+  db_data:
+  nextcloud_data:
