@@ -1,0 +1,12 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    wlp2s0:
+      dhcp4: yes # IP WAN nos dara acceso a internet
+    enp1s0:
+      dhcp4: false
+      addresses:
+        - 192.168.10.1/24  # Asignar ip para la red interna
+      nameservers:
+        - 8.8.8.8
